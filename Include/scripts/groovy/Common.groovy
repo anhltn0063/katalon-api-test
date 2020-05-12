@@ -48,13 +48,21 @@ import cucumber.api.java.en.When
 
 class Common {
 
-	@Given("The Calculator page is loaded successfully")
-	def load_calculator_page() {
-		WebUI.callTestCase(findTestCase("Test Cases/common/The Calculator page is loaded successfully"), [:], FailureHandling.STOP_ON_FAILURE)
+	@When('^user sign in with "(.*)" username and "(.*)" password$')
+	def load_calculator_page(String username, String password) {
+		GlobalVariable.response = WS.callTestCase(
+				findTestCase('Test Cases/BDD/Signin'), [ ('username') : username as String, ('password') : password as String], FailureHandling.STOP_ON_FAILURE)
+		GlobalVariable.secondUser = WS.callTestCase(
+				findTestCase('Test Cases/BDD/Userlist'), [ ('username') : username as String, ('password') : password as String], FailureHandling.STOP_ON_FAILURE)
+		}
+
+	@Then('^response status code is "(.*)"$')
+	def check_result(String responseStatusCode) {
+		WS.verifyResponseStatusCode(GlobalVariable.response, responseStatusCode as Integer)
 	}
 
-	@Then("I get the result (.*)")
-	def check_result(String result) {
-		WebUI.callTestCase(findTestCase('Test Cases/common/Check result'), [ ('result') : result ], FailureHandling.STOP_ON_FAILURE)
+	@And('^user sees access token as "(.*)"$')
+	def user_sends_request_to_get_user_data_with(String accessToken) {
+		WS.verifyElementPropertyValue(GlobalVariable.response, 'token', accessToken)
 	}
 }

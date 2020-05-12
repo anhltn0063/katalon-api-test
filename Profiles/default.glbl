@@ -6,7 +6,7 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://katalon-studio-samples.github.io/calculator'</initValue>
-      <name>baseUrl</name>
+      <initValue>'https://reqres.in/'</initValue>
+      <name>baseURI</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -3,10 +3,10 @@
    <description></description>
    <name>demo</name>
    <tag></tag>
-   <UUID>2be1953f-d7ef-496b-9ff2-280e4f491bc8</UUID>
+   <UUID>0075fd38-5351-441a-80a3-c711cd11445c</UUID>
    <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>/Users/quiducle/Documents/calculator-sample/demo.prj</projectFileLocation>
+   <projectFileLocation>/Users/pham.ngoc.dai/Katalon Studio/FFL_BBD_API/demo.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
